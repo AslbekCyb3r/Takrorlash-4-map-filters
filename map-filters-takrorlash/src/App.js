@@ -17,22 +17,22 @@ function App() {
 
     { id: 11, name: 'sarvinoz', age: 19, weight: 49 },
     { id: 12, name: 'xuryat', age: 22, weight: 58 },
-    { id: 13, name: 'user13', age: 24, weight: 66 },
-    { id: 14, name: 'user14', age: 26, weight: 73 },
-    { id: 15, name: 'user15', age: 29, weight: 54 },
+    { id: 13, name: 'ali', age: 24, weight: 66 },
+    { id: 14, name: 'jaxon', age: 26, weight: 73 },
+    { id: 15, name: 'guli', age: 29, weight: 54 },
 
-    { id: 16, name: 'user16', age: 33, weight: 62 },
-    { id: 17, name: 'user17', age: 34, weight: 59 },
-    { id: 18, name: 'user18', age: 42, weight: 41 },
-    { id: 19, name: 'user19', age: 46, weight: 88 },
-    { id: 20, name: 'user20', age: 52, weight: 67 },
-    { id: 21, name: 'user21', age: 54, weight: 53 },
-    { id: 22, name: 'user22', age: 62, weight: 75 },
-    { id: 23, name: 'user23', age: 60, weight: 46 },
-    { id: 24, name: 'user24', age: 47, weight: 69 },
+    { id: 16, name: 'sherzod', age: 33, weight: 62 },
+    { id: 17, name: 'shaxzod', age: 34, weight: 59 },
+    { id: 18, name: 'samir', age: 42, weight: 41 },
+    { id: 19, name: 'samira', age: 46, weight: 88 },
+    { id: 20, name: 'asad', age: 52, weight: 67 },
+    { id: 21, name: 'anora', age: 54, weight: 53 },
+    { id: 22, name: 'alibek', age: 62, weight: 75 },
+    { id: 23, name: 'shoxi', age: 60, weight: 46 },
+    { id: 24, name: 'diyor', age: 47, weight: 69 },
   ]);
 
-
+  const [oldata, setoldata] = useState([])
 
   function dalete(id) {
 
@@ -61,6 +61,64 @@ function App() {
     return Math.floor(age / data.length)
   }
 
+
+  function heandle12() {
+    let arr = oldata
+    if (oldata.length == 0) {
+      setoldata(data)
+      arr = data
+    }
+    setdata(
+      arr.filter((e) => {
+        return e.age <= 12
+      })
+    )
+  }
+
+  function heandle1218() {
+
+    let arr = oldata
+    if (oldata.length == 0) {
+      setoldata(data)
+      arr = data
+    }
+    setdata(
+      arr.filter((e) => {
+        return e.age >= 12 && e.age <= 18
+      })
+    )
+  }
+
+  function heandle1830() {
+    let arr = oldata
+    if (oldata.length == 0) {
+      setoldata(data)
+      arr = data
+    }
+    setdata(
+      arr.filter((e) => {
+        return e.age >= 18 && e.age <= 30
+      })
+    )
+  }
+
+  function heandle30() {
+    let arr = oldata
+    if (oldata.length == 0) {
+      setdata(data)
+      arr = data
+    }
+    setdata(
+      arr.filter((e) => {
+        return e.age > 30
+      })
+    )
+  }
+
+
+
+
+
   return (
     <div className="App">
 
@@ -78,10 +136,10 @@ function App() {
 
 
       <div className='mt-4 gap-4 grid grid-cols-4 w-2xl m-auto'>
-        <button className='bg-blue-400 p-2 text-white '>12 yoshgacha</button>
-        <button className='bg-blue-400 p-2 text-white '>12-18 yoshgacha</button>
-        <button className='bg-blue-400 p-2 text-white '>18-30 yoshgacha</button>
-        <button className='bg-blue-400 p-2 text-white '>30+ yoshgacha</button>
+        <button onClick={() => heandle12()} className='bg-blue-400 p-2 text-white '>12 yoshgacha</button>
+        <button onClick={() => heandle1218()} className='bg-blue-400 p-2 text-white '>12-18 yoshgacha</button>
+        <button onClick={() => heandle1830()} className='bg-blue-400 p-2 text-white '>18-30 yoshgacha</button>
+        <button onClick={() => heandle30()} className='bg-blue-400 p-2 text-white '>30+ yoshgacha</button>
 
       </div>
 
