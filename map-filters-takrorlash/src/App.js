@@ -3,31 +3,33 @@ import './App.css';
 
 function App() {
   const [data, setdata] = useState([
-    { id: 1, name: 'aslbek', age: 24, weight: 55 },
-    { id: 2, name: 'lobar', age: 24, weight: 48 },
-    { id: 3, name: 'mexribon', age: 24, weight: 52 },
-    { id: 4, name: 'aynur', age: 24, weight: 60 },
-    { id: 5, name: 'shaxrizoda', age: 24, weight: 45 },
-    { id: 6, name: 'tuymurod', age: 24, weight: 78 },
-    { id: 7, name: 'gulrux', age: 24, weight: 50 },
-    { id: 8, name: 'shoxsanam', age: 24, weight: 47 },
-    { id: 9, name: 'shoxjaxon', age: 24, weight: 82 },
-    { id: 10, name: 'diyor', age: 24, weight: 70 },
-    { id: 11, name: 'sarvinoz', age: 24, weight: 49 },
-    { id: 12, name: 'xuryat', age: 24, weight: 58 },
+    { id: 1, name: 'aslbek', age: 2, weight: 55 },
+    { id: 2, name: 'lobar', age: 11, weight: 48 },
+    { id: 3, name: 'mexribon', age: 10, weight: 52 },
+    { id: 4, name: 'aynur', age: 8, weight: 60 },
+    { id: 5, name: 'shaxrizoda', age: 7, weight: 45 },
 
+    { id: 6, name: 'tuymurod', age: 13, weight: 78 },
+    { id: 7, name: 'gulrux', age: 15, weight: 50 },
+    { id: 8, name: 'shoxsanam', age: 17, weight: 47 },
+    { id: 9, name: 'shoxjaxon', age: 16, weight: 82 },
+    { id: 10, name: 'diyor', age: 14, weight: 70 },
+
+    { id: 11, name: 'sarvinoz', age: 19, weight: 49 },
+    { id: 12, name: 'xuryat', age: 22, weight: 58 },
     { id: 13, name: 'user13', age: 24, weight: 66 },
-    { id: 14, name: 'user14', age: 24, weight: 73 },
-    { id: 15, name: 'user15', age: 24, weight: 54 },
-    { id: 16, name: 'user16', age: 24, weight: 62 },
-    { id: 17, name: 'user17', age: 24, weight: 59 },
-    { id: 18, name: 'user18', age: 24, weight: 41 },
-    { id: 19, name: 'user19', age: 24, weight: 88 },
-    { id: 20, name: 'user20', age: 24, weight: 67 },
-    { id: 21, name: 'user21', age: 24, weight: 53 },
-    { id: 22, name: 'user22', age: 24, weight: 75 },
-    { id: 23, name: 'user23', age: 24, weight: 46 },
-    { id: 24, name: 'user24', age: 24, weight: 69 },
+    { id: 14, name: 'user14', age: 26, weight: 73 },
+    { id: 15, name: 'user15', age: 29, weight: 54 },
+
+    { id: 16, name: 'user16', age: 33, weight: 62 },
+    { id: 17, name: 'user17', age: 34, weight: 59 },
+    { id: 18, name: 'user18', age: 42, weight: 41 },
+    { id: 19, name: 'user19', age: 46, weight: 88 },
+    { id: 20, name: 'user20', age: 52, weight: 67 },
+    { id: 21, name: 'user21', age: 54, weight: 53 },
+    { id: 22, name: 'user22', age: 62, weight: 75 },
+    { id: 23, name: 'user23', age: 60, weight: 46 },
+    { id: 24, name: 'user24', age: 47, weight: 69 },
   ]);
 
 
@@ -41,6 +43,24 @@ function App() {
     setdata(newdata)
   }
 
+
+  function mediumweight() {
+    let medium = 0
+    data.forEach((item) => {
+      medium += item.weight
+    })
+    return Math.floor(medium / data.length)
+  }
+
+
+  function mediumage() {
+    let age = 0
+    data.forEach((item) => {
+      age += item.age
+    })
+    return Math.floor(age / data.length)
+  }
+
   return (
     <div className="App">
 
@@ -50,10 +70,19 @@ function App() {
 
 
 
-      <div className='w-xl grid grid-cols-3 m-auto mt-4'>
-        <div>jami:{data.length}</div>
-        <div>o`rtacha vazn</div>
-        <div>o`rtacha yoshi</div>
+      <div className='w-xl grid grid-cols-3 m-auto mt-4 gap-4 text-2xl text-white rounded-xl '>
+        <div className='bg-blue-400'>jami:{data.length}</div>
+        <div className='bg-blue-400'>o`rtacha vazn:{mediumweight()}</div>
+        <div className='bg-blue-400'>o`rtacha yoshi:{mediumage()}</div>
+      </div>
+
+
+      <div className='mt-4 gap-4 grid grid-cols-4 w-2xl m-auto'>
+        <button className='bg-blue-400 p-2 text-white '>12 yoshgacha</button>
+        <button className='bg-blue-400 p-2 text-white '>12-18 yoshgacha</button>
+        <button className='bg-blue-400 p-2 text-white '>18-30 yoshgacha</button>
+        <button className='bg-blue-400 p-2 text-white '>30+ yoshgacha</button>
+
       </div>
 
       <table className="border-collapse border border-black m-auto mt-5 w-1/2">
