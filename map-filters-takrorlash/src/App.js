@@ -133,6 +133,8 @@ function App() {
 
       <Title group='1-26 gruxi' theme="Tailwind css darsi" />
 
+      <h1>salom</h1>
+
 
 
 
