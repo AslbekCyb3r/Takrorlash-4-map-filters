@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-
+import Header from './component/Header';
+import Title from './component/Title';
 function App() {
   const [data, setdata] = useState([
     { id: 1, name: 'aslbek', age: 2, weight: 55 },
@@ -122,9 +123,16 @@ function App() {
   return (
     <div className="App">
 
-      <h1 className='text-2xl font-bold text-center'>
+
+      <Header>
+      </Header>
+
+      <h1 className='text-2xl font-bold text-center mt-4'>
         1-24 ATT talabalari ro'yxati
       </h1>
+
+      <Title group='1-26 gruxi' theme="Tailwind css darsi" />
+
 
 
 
